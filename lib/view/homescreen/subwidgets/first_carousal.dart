@@ -1,6 +1,6 @@
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:mypcot/viewmodel/products_provider.dart';
+import 'package:web_crafts/viewmodel/products_provider.dart';
 
 class TopBannerslider extends StatelessWidget {
   final HomeDataProvider value;

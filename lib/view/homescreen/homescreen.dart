@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 import 'package:motion_tab_bar/MotionTabBarController.dart';
-import 'package:mypcot/view/homescreen/widgets/account_body.dart';
-import 'package:mypcot/view/homescreen/widgets/appbar_widget.dart';
-import 'package:mypcot/view/homescreen/widgets/cart_body.dart';
-import 'package:mypcot/view/homescreen/widgets/category_body.dart';
-import 'package:mypcot/view/homescreen/widgets/home_body.dart';
-import 'package:mypcot/view/homescreen/widgets/offers_body.dart';
-import 'package:mypcot/viewmodel/products_provider.dart';
+import 'package:web_crafts/view/homescreen/widgets/account_body.dart';
+import 'package:web_crafts/view/homescreen/widgets/appbar_widget.dart';
+import 'package:web_crafts/view/homescreen/widgets/cart_body.dart';
+import 'package:web_crafts/view/homescreen/widgets/category_body.dart';
+import 'package:web_crafts/view/homescreen/widgets/home_body.dart';
+import 'package:web_crafts/view/homescreen/widgets/offers_body.dart';
+import 'package:web_crafts/viewmodel/products_provider.dart';
 import 'package:provider/provider.dart';
 
 class Homescreen extends StatefulWidget {

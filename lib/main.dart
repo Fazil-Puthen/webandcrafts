@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:mypcot/services/sslservice.dart';
-import 'package:mypcot/view/homescreen/homescreen.dart';
-import 'package:mypcot/viewmodel/products_provider.dart';
+import 'package:web_crafts/services/sslservice.dart';
+import 'package:web_crafts/view/homescreen/homescreen.dart';
+import 'package:web_crafts/viewmodel/products_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {

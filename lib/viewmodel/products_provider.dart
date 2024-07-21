@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:mypcot/model/model2/home_model2.dart';
+import 'package:web_crafts/model/model2/home_model2.dart';
 
 class HomeDataProvider with ChangeNotifier {
   HomeData? homeData;

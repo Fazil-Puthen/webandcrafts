@@ -1,6 +1,6 @@
-import 'package:mypcot/model/model2/banner_model2.dart';
-import 'package:mypcot/model/model2/category_model2.dart';
-import 'package:mypcot/model/model2/product_model2.dart';
+import 'package:web_crafts/model/model2/banner_model2.dart';
+import 'package:web_crafts/model/model2/category_model2.dart';
+import 'package:web_crafts/model/model2/product_model2.dart';
 
 class HomeData {
   final List<Banner> banners;

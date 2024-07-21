@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mypcot/constants/constants.dart';
+import 'package:web_crafts/constants/constants.dart';
 
 class HeadingText extends StatelessWidget {
   final String heading;

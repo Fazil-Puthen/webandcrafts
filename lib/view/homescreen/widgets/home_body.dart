@@ -1,11 +1,11 @@
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:mypcot/constants/constants.dart';
-import 'package:mypcot/view/homescreen/subwidgets/category_widget.dart';
-import 'package:mypcot/view/homescreen/subwidgets/first_carousal.dart';
-import 'package:mypcot/view/homescreen/subwidgets/headings.dart';
-import 'package:mypcot/view/homescreen/subwidgets/product_container.dart';
-import 'package:mypcot/viewmodel/products_provider.dart';
+import 'package:web_crafts/constants/constants.dart';
+import 'package:web_crafts/view/homescreen/subwidgets/category_widget.dart';
+import 'package:web_crafts/view/homescreen/subwidgets/first_carousal.dart';
+import 'package:web_crafts/view/homescreen/subwidgets/headings.dart';
+import 'package:web_crafts/view/homescreen/subwidgets/product_container.dart';
+import 'package:web_crafts/viewmodel/products_provider.dart';
 import 'package:provider/provider.dart';
 
 class HomeBody extends StatelessWidget {

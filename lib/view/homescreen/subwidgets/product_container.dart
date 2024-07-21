@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mypcot/constants/constants.dart';
-import 'package:mypcot/model/model2/product_model2.dart';
+import 'package:web_crafts/constants/constants.dart';
+import 'package:web_crafts/model/model2/product_model2.dart';
 import 'package:simple_star_rating/simple_star_rating.dart';
 
 class ProductContainer extends StatelessWidget {

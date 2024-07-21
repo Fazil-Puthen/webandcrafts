@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mypcot/constants/constants.dart';
-import 'package:mypcot/model/model2/category_model2.dart';
+import 'package:web_crafts/constants/constants.dart';
+import 'package:web_crafts/model/model2/category_model2.dart';
 
 class CategoryWidget extends StatelessWidget {
   final List<Category> value;
@@ -17,7 +17,7 @@ class CategoryWidget extends StatelessWidget {
     itemBuilder:(context, index) => 
     // final data=value[index];
     Container(height: 100,width: 120,
-    
+
     decoration: BoxDecoration(
       border: Border.all(width: 1,color: Colors.grey),
       borderRadius: BorderRadius.circular(15),
