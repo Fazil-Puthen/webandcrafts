@@ -1,11 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:mypcot/services/sslservice.dart';
 import 'package:mypcot/view/homescreen/homescreen.dart';
 import 'package:mypcot/viewmodel/products_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) =>HomeDataProvider() ,
+  HttpOverrides.global = MyHttpOverrides();
+  runApp(
+    ChangeNotifierProvider(
+    create: (context) =>HomeDataProvider(),
     child: const MyApp()));
 }
 

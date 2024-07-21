@@ -1,27 +1,33 @@
-import 'package:flutter/foundation.dart';
-import 'package:mypcot/model/home_model.dart';
-import 'package:mypcot/services/apiservice.dart';
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:mypcot/model/model2/home_model2.dart';
 
 class HomeDataProvider with ChangeNotifier {
-  final FetchDataService _apiService = FetchDataService();
-  HomeData? _homeData;
-  bool _isLoading = false;
-  String? _error;
-
-  HomeData? get homeData => _homeData;
-  bool get isLoading => _isLoading;
-  String? get error => _error;
+  HomeData? homeData;
+  bool isLoading = true;
+  String? error;
 
   Future<void> fetchHomeData() async {
-    _isLoading = true;
-    notifyListeners();
+    const  url = 'https://64bfc2a60d8e251fd111630f.mockapi.io/api/Todo';
     try {
-      _homeData = await _apiService.fetchapidata();
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        final data =await jsonDecode(response.body);
+        homeData =  HomeData.fromJson(data);
+        if (homeData != null) {
+        isLoading = false;
+        notifyListeners();
+        print('the banner widget inside provider ${homeData!.adBannerImageUrl}');
+         print('the loading option $isLoading');
+      }else{
+        print('the home data is emptyoooooooooo');
+      }
+       }
+      else {
+        error = 'Failed to load data';
+      }
     } catch (e) {
-      _error = e.toString();
-    } finally {
-      _isLoading = false;
-      notifyListeners();
-    }
-  }
-}
+      error = e.toString();
+    } 
+}}

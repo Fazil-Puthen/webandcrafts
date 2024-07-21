@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:mypcot/constants/constants.dart';
+import 'package:mypcot/model/model2/product_model2.dart';
+import 'package:mypcot/viewmodel/products_provider.dart';
 import 'package:simple_star_rating/simple_star_rating.dart';
 
 class product_container extends StatelessWidget {
+  final List<Product> value;
+  final int index;
   const product_container({
     super.key,
+    required this.value,
+    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
+    final data=value[index];
     return Container(
-      width: 130,
+      width: 150,
       height: 153,
       decoration: BoxDecoration(
         border: Border.all(width: 1),
@@ -20,22 +27,24 @@ class product_container extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //image
-          SizedBox(width: 80,
-          height: 80,
-            child: Image.asset('assets/cooker.png')),
+          SizedBox(width: 90,
+          height: 90,
+            child: Image.network(data.productImage)),
             progap,
 
           //button
           Row(mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(height: 25,
-              width: 70,
+              width: 75,
               margin:const  EdgeInsets.only(left: 4),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 color: Colors.orange[300]
               ),
-              child: const Center(child: Text('Sale 65% Off',style: TextStyle(fontSize: 7.5),)),
+              child:  Center(child:
+              Text('Sale ${data.discount}',
+              style:const  TextStyle(fontSize: 8),)),
               ),
             ],
           ),
@@ -43,8 +52,10 @@ class product_container extends StatelessWidget {
 
            //description
            Container(margin: const EdgeInsets.only(left: 5),
-             child: const Text('The is a long established fact that a reader ',
-             style:TextStyle(fontSize: 10),),
+             child: Text(data.productName,
+             style:const TextStyle(fontSize: 11),
+             maxLines: 2,
+             overflow: TextOverflow.ellipsis,),
            ),
            progap,
 
@@ -55,7 +66,7 @@ class product_container extends StatelessWidget {
                  child: SimpleStarRating(
                            allowHalfRating: true,
                            starCount: 5,
-                           rating: 4,
+                           rating: data.productRating.toDouble(),
                            size: 10,
                            onRated: (rate) {},
                            spacing: 2,
@@ -67,10 +78,13 @@ class product_container extends StatelessWidget {
 
            //price
           Container(margin: EdgeInsets.only(left: 5),
-            child: const Row(
+            child:  Row(
               children: [
-                Text(' ₹100',style: TextStyle(fontSize: 10),),SizedBox(width: 2,),
-                Text('₹100',style: TextStyle(fontSize: 10,decoration: TextDecoration.lineThrough),)
+                Text(data.actualPrice,style: 
+                const TextStyle(fontSize: 10.5),),
+                const SizedBox(width: 4,),
+                Text(data.offerPrice,style: 
+                const TextStyle(fontSize: 10.5,decoration: TextDecoration.lineThrough),)
               ],
             ),
           ),

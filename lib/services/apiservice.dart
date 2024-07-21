@@ -12,14 +12,17 @@ try{
   final uri=Uri.parse(url);
   final result=await http.get(uri);
   if(result.statusCode==200){
-    final response=jsonDecode(result.body);
+    print('this is the api call');
+    // final response=jsonDecode(result.body);
+    final Map<String, dynamic> response=jsonDecode(result.body);
+    print('this is the response from apiservice $response');
     return HomeData.fromJson(response);
   }
   else{
     throw Exception('Some error occured');
   }}
   catch(e){
-    throw Exception(e);
+    throw Exception('this is the error in apiservice: $e');
   }
 }
 }

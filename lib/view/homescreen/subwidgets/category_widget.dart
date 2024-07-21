@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mypcot/constants/constants.dart';
+import 'package:mypcot/model/model2/category_model2.dart';
 
-class category_widget extends StatelessWidget {
-  const category_widget({
+class CategoryWidget extends StatelessWidget {
+  final List<Category> value;
+  const CategoryWidget({
     super.key,
+    required this.value,
   });
 
   @override
@@ -12,6 +15,7 @@ class category_widget extends StatelessWidget {
       scrollDirection: Axis.horizontal,
 
     itemBuilder:(context, index) => 
+    // final data=value[index];
     Container(height: 100,width: 120,
     decoration: BoxDecoration(
       border: Border.all(width: 1),
@@ -24,18 +28,18 @@ class category_widget extends StatelessWidget {
         SizedBox(
           width:65 ,
           height: 65,
-          child: Image.asset('assets/cooker.png'),
+          child: Image.network(value[index].imageUrl),
         ),
         progap,
 
         //text
-        const Text('Grocery & Foods',style: TextStyle(fontSize: 13),),
+        Text(value[index].title,style: const TextStyle(fontSize: 13),),
       ],
     ),
     ),
     
     separatorBuilder:(context, index) => const SizedBox(width: 10,),
 
-    itemCount: 10);
+    itemCount: value.length);
   }
 }

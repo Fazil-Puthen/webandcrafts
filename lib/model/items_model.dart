@@ -9,9 +9,7 @@ part 'items_model.g.dart';
 class Item {
   final String type;
   final String title;
-  @JsonKey(name: 'image_url')
   final String? imageUrl;
-  @JsonKey(name: 'banner_contents')
   final List<BannerSliderContent>? bannerContents;
   final List<Product>? products;
   final List<Category>? categories;

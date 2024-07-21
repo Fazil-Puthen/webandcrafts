@@ -10,6 +10,8 @@ import 'package:mypcot/view/homescreen/widgets/cart_body.dart';
 import 'package:mypcot/view/homescreen/widgets/category_body.dart';
 import 'package:mypcot/view/homescreen/widgets/home_body.dart';
 import 'package:mypcot/view/homescreen/widgets/offers_body.dart';
+import 'package:mypcot/viewmodel/products_provider.dart';
+import 'package:provider/provider.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -27,6 +29,15 @@ class _HomescreenState extends State<Homescreen> {
    const Offers(),
     const Account()
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    final provider = Provider.of<HomeDataProvider>(context, listen: false);
+    provider.fetchHomeData();
+
+  }
 
   @override
   Widget build(BuildContext context) {
