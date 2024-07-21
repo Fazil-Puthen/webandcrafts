@@ -42,11 +42,11 @@ class AppbarWidget extends StatelessWidget {
          ),
       
          //notificaion icon
-         Padding(
-           padding: const EdgeInsets.only(bottom: 15,right:5 ),
-           child: Container(width: 10,
+         const Padding(
+           padding: EdgeInsets.only(bottom: 15,right:5 ),
+           child: SizedBox(width: 10,
            height: 10,
-             child: const Stack(children: [
+             child: Stack(children: [
              Icon(Icons.notifications_none,color: Colors.white,),
              CircleAvatar(
                backgroundColor: Colors.red,

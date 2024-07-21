@@ -1,11 +1,6 @@
-import 'dart:isolate';
-
 import 'package:another_carousel_pro/another_carousel_pro.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mypcot/constants/constants.dart';
-import 'package:mypcot/model/home_model.dart';
 import 'package:mypcot/view/homescreen/subwidgets/category_widget.dart';
 import 'package:mypcot/view/homescreen/subwidgets/first_carousal.dart';
 import 'package:mypcot/view/homescreen/subwidgets/headings.dart';
@@ -27,7 +22,6 @@ class HomeBody extends StatelessWidget {
 
 
     return Consumer<HomeDataProvider>(builder: (context, value, child) {
-      print('this is the isloding inside the screen ${value.isLoading}');
     if(value.isLoading){
       return const Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +35,7 @@ class HomeBody extends StatelessWidget {
 
     else if(!value.isLoading){
     return Center(
-      child: Container(
+      child: SizedBox(
           width: screenwidth,
           height: screenheight,
           // color: Colors.green[200],
@@ -54,12 +48,12 @@ class HomeBody extends StatelessWidget {
                 SizedBox(
                   width: screenwidth,
                   height: 200,
-                  child: first_carousal(value: value,),
+                  child: TopBannerslider(value: value,),
                 ),
                 gap,
 
                 //Most popular heading row
-                const heading_text(
+                const HeadingText(
                   heading: 'Most Popular',
                   subhead: 'view all',
                 ),
@@ -68,7 +62,7 @@ class HomeBody extends StatelessWidget {
                 //most popular section
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Container(
+                  child: SizedBox(
                     width: screenwidth,
                     height: 200,
                     child: ListView.separated(
@@ -78,7 +72,7 @@ class HomeBody extends StatelessWidget {
                         width: 10,
                       ),
                       itemBuilder: (context, index) {
-                        return product_container(value:value.homeData!.mostPopular,index: index,);
+                        return ProductContainer(value:value.homeData!.mostPopular,index: index,);
                       },
                     ),
                   ),
@@ -111,12 +105,12 @@ class HomeBody extends StatelessWidget {
                 gap,
 
                 //categories heading row
-                const heading_text(heading: 'Categories', subhead: 'view all'),
+                const HeadingText(heading: 'Categories', subhead: 'view all'),
                 gap,
 
                 //products in categories
                 Container(
-                  margin: EdgeInsets.only(left: 10),
+                  margin: const EdgeInsets.only(left: 10),
                   // color: Colors.amber,
                   width: screenwidth,
                   height: 100,
@@ -126,7 +120,7 @@ class HomeBody extends StatelessWidget {
                 progap,
 
                 //featured text
-                const heading_text(
+                const HeadingText(
                     heading: 'Featured Products', subhead: 'view all'),
                 gap,
                 progap,
@@ -134,7 +128,7 @@ class HomeBody extends StatelessWidget {
                 //featured products section
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Container(
+                  child: SizedBox(
                     width: screenwidth,
                     height: 200,
                     child: ListView.separated(
@@ -144,7 +138,7 @@ class HomeBody extends StatelessWidget {
                         width: 10,
                       ),
                       itemBuilder: (context, index) {
-                        return product_container(value:value.homeData!.bestSellers,index: index,);
+                        return ProductContainer(value:value.homeData!.bestSellers,index: index,);
                       },
                     ),
                   ),
@@ -155,7 +149,7 @@ class HomeBody extends StatelessWidget {
             ),
           )),
     );}
-    else {return SizedBox();}
+    else {return const SizedBox();}
     }
 );
   }

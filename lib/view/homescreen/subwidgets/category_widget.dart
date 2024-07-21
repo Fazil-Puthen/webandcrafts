@@ -17,8 +17,9 @@ class CategoryWidget extends StatelessWidget {
     itemBuilder:(context, index) => 
     // final data=value[index];
     Container(height: 100,width: 120,
+    
     decoration: BoxDecoration(
-      border: Border.all(width: 1),
+      border: Border.all(width: 1,color: Colors.grey),
       borderRadius: BorderRadius.circular(15),
     ),
     child: Column(

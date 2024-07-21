@@ -2,9 +2,9 @@ import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:mypcot/viewmodel/products_provider.dart';
 
-class first_carousal extends StatelessWidget {
+class TopBannerslider extends StatelessWidget {
   final HomeDataProvider value;
-   first_carousal({
+   const TopBannerslider({
     super.key,
     required this.value,
   });

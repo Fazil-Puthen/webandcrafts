@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mypcot/constants/constants.dart';
 
-class heading_text extends StatelessWidget {
+class HeadingText extends StatelessWidget {
   final String heading;
   final String subhead;
-  const heading_text({
+  const HeadingText({
     super.key,
     required this.heading,
     required this.subhead,

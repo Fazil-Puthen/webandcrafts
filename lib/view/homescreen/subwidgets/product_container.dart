@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mypcot/constants/constants.dart';
 import 'package:mypcot/model/model2/product_model2.dart';
-import 'package:mypcot/viewmodel/products_provider.dart';
 import 'package:simple_star_rating/simple_star_rating.dart';
 
-class product_container extends StatelessWidget {
+class ProductContainer extends StatelessWidget {
   final List<Product> value;
   final int index;
-  const product_container({
+  const ProductContainer({
     super.key,
     required this.value,
     required this.index,
@@ -20,7 +19,7 @@ class product_container extends StatelessWidget {
       width: 150,
       height: 153,
       decoration: BoxDecoration(
-        border: Border.all(width: 1),
+        border: Border.all(width: 1,color: Colors.grey),
         borderRadius: BorderRadius.circular(10),
       ),
       child:  Column(
@@ -62,7 +61,7 @@ class product_container extends StatelessWidget {
            //star rating
            Row(mainAxisAlignment: MainAxisAlignment.start,
              children: [
-               Container(margin: EdgeInsets.only(left: 5),
+               Container(margin: const EdgeInsets.only(left: 5),
                  child: SimpleStarRating(
                            allowHalfRating: true,
                            starCount: 5,
@@ -77,7 +76,7 @@ class product_container extends StatelessWidget {
            progap,
 
            //price
-          Container(margin: EdgeInsets.only(left: 5),
+          Container(margin: const EdgeInsets.only(left: 5),
             child:  Row(
               children: [
                 Text(data.actualPrice,style: 

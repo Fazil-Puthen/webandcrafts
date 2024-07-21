@@ -18,10 +18,8 @@ class HomeDataProvider with ChangeNotifier {
         if (homeData != null) {
         isLoading = false;
         notifyListeners();
-        print('the banner widget inside provider ${homeData!.adBannerImageUrl}');
-         print('the loading option $isLoading');
+
       }else{
-        print('the home data is emptyoooooooooo');
       }
        }
       else {

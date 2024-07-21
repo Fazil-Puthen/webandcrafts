@@ -7,6 +7,7 @@ class Product {
   final String offerPrice;
   final String discount;
 
+
   Product({
     required this.sku,
     required this.productName,
@@ -15,6 +16,7 @@ class Product {
     required this.actualPrice,
     required this.offerPrice,
     required this.discount,
+
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -26,6 +28,7 @@ class Product {
       actualPrice: json['actual_price'],
       offerPrice: json['offer_price'],
       discount: json['discount'],
+    
     );
   }
 }
